@@ -137,8 +137,10 @@
                     </properties>
                     <suiteXmlFiles>
                         <suiteXmlFile>src/test/java/qa/resources/suites/testng.xml</suiteXmlFile>
-<!--                        /Users/bratislav.miletic/Documents/test/src/test/java/qa/resources/suites/testng.xml-->
                     </suiteXmlFiles>
+                    <argLine>
+                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/1.8.10/aspectjweaver-1.8.10.jar"
+                    </argLine>
                 </configuration>
                 <dependencies>
                     <dependency>

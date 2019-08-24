@@ -1,8 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 5.203 s <<< FAILURE! - in TestSuite
-testPost(qa.tests.ValidateEmails)  Time elapsed: 3.756 s  <<< FAILURE!
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 5.368 s <<< FAILURE! - in TestSuite
+testPost(qa.tests.ValidateEmails)  Time elapsed: 3.785 s  <<< FAILURE!
 org.assertj.core.api.SoftAssertionError: 
 
 The following 50 assertions failed:
