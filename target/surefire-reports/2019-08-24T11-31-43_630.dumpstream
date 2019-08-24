@@ -1,15 +1,15 @@
-# Created at 2019-08-24T11:29:19.281
+# Created at 2019-08-24T11:31:44.437
 WARNING: An illegal reflective access operation has occurred
 
-# Created at 2019-08-24T11:29:19.281
+# Created at 2019-08-24T11:31:44.438
 WARNING: Illegal reflective access by com.google.inject.internal.cglib.core.ReflectUtils$2 (file:/Users/bratislav.miletic/.m2/repository/org/sonatype/sisu/sisu-guice/2.1.7/sisu-guice-2.1.7.jar) to method java.lang.ClassLoader.defineClass(java.lang.String,byte[],int,int,java.security.ProtectionDomain)
 
-# Created at 2019-08-24T11:29:19.283
+# Created at 2019-08-24T11:31:44.439
 WARNING: Please consider reporting this to the maintainers of com.google.inject.internal.cglib.core.ReflectUtils$2
 
-# Created at 2019-08-24T11:29:19.283
+# Created at 2019-08-24T11:31:44.439
 WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
 
-# Created at 2019-08-24T11:29:19.283
+# Created at 2019-08-24T11:31:44.439
 WARNING: All illegal access operations will be denied in a future release
 
