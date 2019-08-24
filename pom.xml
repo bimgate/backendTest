@@ -138,9 +138,9 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>src/test/java/qa/resources/suites/testng.xml</suiteXmlFile>
                     </suiteXmlFiles>
-                    <argLine>
-                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/1.8.10/aspectjweaver-1.8.10.jar"
-                    </argLine>
+<!--                    <argLine>-->
+<!--                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/1.8.10/aspectjweaver-1.8.10.jar"-->
+<!--                    </argLine>-->
                     <forkMode>once</forkMode>
                 </configuration>
                 <dependencies>
