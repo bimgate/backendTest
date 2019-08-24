@@ -82,7 +82,7 @@ public class ValidateEmails extends TestBase {
             statusCode(200).extract().body().path("email");
 
             for (int x=0; x<bodyComment.size(); x++) {
-                Boolean testB = new ValidateValue().isValidEmailAddress("khjgkhg@fg%!.com");
+                Boolean testB = new ValidateValue().isValidEmailAddress("khjgkhg.com");
                 softly.assertThat(testB).as("Email: %s from postId %s", bodyComment.get(x), allUserPosts.get(i)).isTrue();
             }
         }

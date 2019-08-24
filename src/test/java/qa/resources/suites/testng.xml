@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite thread-count="1" verbose="1" name="test" annotations="JDK">
+
+    <test name="test">
+        <classes>
+            <class name="qa.tests.ValidateEmails"/>
+        </classes>
+    </test>
+
+</suite>
