@@ -18,6 +18,7 @@ import static com.jayway.restassured.RestAssured.when;
 
 public class ValidateEmails extends TestBase {
 
+    public String USER_NAME = "Samantha";
 
     @BeforeClass
     public void setup() {
@@ -70,7 +71,7 @@ public class ValidateEmails extends TestBase {
    @Test
     public void testPost() throws Exception {
 
-        Integer userId = userDataUserName("Samantha");
+        Integer userId = userDataUserName(USER_NAME);
         List allUserPosts = userDataPosts(userId);
 
         SoftAssertions softly = new SoftAssertions();
@@ -82,7 +83,7 @@ public class ValidateEmails extends TestBase {
             statusCode(200).extract().body().path("email");
 
             for (int x=0; x<bodyComment.size(); x++) {
-                Boolean testB = new ValidateValue().isValidEmailAddress("ggjgj.com");
+                Boolean testB = new ValidateValue().isValidEmailAddress(bodyComment.get(x).toString());
                 softly.assertThat(testB).as("Email: %s from postId %s", bodyComment.get(x), allUserPosts.get(i)).isTrue();
             }
         }
