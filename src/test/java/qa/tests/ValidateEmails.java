@@ -26,7 +26,8 @@ public class ValidateEmails extends TestBase {
         RestAssured.baseURI = "https://jsonplaceholder.typicode.com";
     }
 
-    @Step public Integer userDataUserName(String user) throws Exception {
+    @Step
+    public Integer userDataUserName(String user) throws Exception {
         Integer userId = null;
 
         Response<List<Users>> response = testApi.getUser().execute();
@@ -49,7 +50,8 @@ public class ValidateEmails extends TestBase {
         return userId;
     }
 
-    @Step public List userDataPosts(Integer userId) throws Exception {
+    @Step
+    public List userDataPosts(Integer userId) throws Exception {
         List postsIDs = new ArrayList();
 
         Response<List<Posts>> response = testApi.getPosts(userId).execute();
@@ -83,11 +85,10 @@ public class ValidateEmails extends TestBase {
             statusCode(200).extract().body().path("email");
 
             for (int x=0; x<bodyComment.size(); x++) {
-                Boolean testB = new ValidateValue().isValidEmailAddress(bodyComment.get(x).toString());
+                Boolean testB = new ValidateValue().isValidEmailAddress("fsedf.com");
                 softly.assertThat(testB).as("Email: %s from postId %s", bodyComment.get(x), allUserPosts.get(i)).isTrue();
             }
         }
         softly.assertAll();
     }
-
 }
