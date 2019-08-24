@@ -13,7 +13,7 @@ jobs:
       - checkout
       - run: mvn clean test
       - store_test_results:
-          path: surefire-reports
+          path: target/surefire-reports/
 workflows:
   version: 2
   build_and_test:
