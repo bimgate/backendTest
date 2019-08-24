@@ -5,13 +5,13 @@ jobs:
       - image: circleci/openjdk:8-jdk
     steps:
       - checkout
-      - run: <command>
+      - run:
   test:
     docker:
       - image: circleci/openjdk:8-jdk
     steps:
       - checkout
-      - run: <command>
+      - run:
 workflows:
   version: 2
   build_and_test:
