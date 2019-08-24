@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2019-08-24T09:02:10Z" name="test" finished-at="2019-08-24T09:02:15Z" duration-ms="4237">
+  <suite started-at="2019-08-24T09:29:19Z" name="test" finished-at="2019-08-24T09:29:23Z" duration-ms="4298">
     <groups>
     </groups>
-    <test started-at="2019-08-24T09:02:10Z" name="test" finished-at="2019-08-24T09:02:15Z" duration-ms="4237">
+    <test started-at="2019-08-24T09:29:19Z" name="test" finished-at="2019-08-24T09:29:23Z" duration-ms="4298">
       <class name="qa.tests.ValidateEmails">
-        <test-method is-config="true" signature="setup()[pri:0, instance:qa.tests.ValidateEmails@45312be2]" started-at="2019-08-24T09:02:10Z" name="setup" finished-at="2019-08-24T09:02:11Z" duration-ms="252" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:qa.tests.ValidateEmails@45312be2]" started-at="2019-08-24T09:29:19Z" name="setup" finished-at="2019-08-24T09:29:19Z" duration-ms="284" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="testPost()[pri:0, instance:qa.tests.ValidateEmails@45312be2]" started-at="2019-08-24T09:02:11Z" name="testPost" finished-at="2019-08-24T09:02:15Z" duration-ms="3962" status="FAIL">
+        <test-method signature="testPost()[pri:0, instance:qa.tests.ValidateEmails@45312be2]" started-at="2019-08-24T09:29:19Z" name="testPost" finished-at="2019-08-24T09:29:23Z" duration-ms="3997" status="FAIL">
           <exception class="org.assertj.core.api.SoftAssertionError">
             <message>
               <![CDATA[
