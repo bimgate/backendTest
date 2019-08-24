@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" name="Failed suite [test]" guice-stage="DEVELOPMENT" verbose="0">
+  <test thread-count="1" name="test(failed)" verbose="0">
+    <classes>
+      <class name="qa.tests.ValidateEmails">
+        <methods>
+          <include name="testPost"/>
+          <include name="setup"/>
+        </methods>
+      </class> <!-- qa.tests.ValidateEmails -->
+    </classes>
+  </test> <!-- test(failed) -->
+</suite> <!-- Failed suite [test] -->
