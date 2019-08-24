@@ -1,9 +1,9 @@
-package qa.guice;
+package guice;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.google.inject.Provider;
-import qa.helpers.TestApi;
+import helpers.TestApi;
 import io.qameta.allure.okhttp3.AllureOkHttp3;
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;

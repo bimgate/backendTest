@@ -1,0 +1,10 @@
+entities/Posts.class
+entities/Company.class
+utility/ValidateValue.class
+helpers/TestBase.class
+guice/TestApiModule.class
+helpers/TestApi.class
+entities/Address.class
+entities/Geo.class
+guice/TestApiProvider.class
+entities/Users.class

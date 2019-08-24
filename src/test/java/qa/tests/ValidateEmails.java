@@ -1,42 +1,92 @@
-package qa;
+package qa.tests;
 
-import qa.entities.Users;
+import com.jayway.restassured.RestAssured;
+import entities.Posts;
+import entities.Users;
+import helpers.TestBase;
+import io.qameta.allure.Step;
+import org.assertj.core.api.SoftAssertions;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
+import retrofit2.Response;
+import utility.ValidateValue;
 
-public class ValidateEmails extends TestBase{
+import java.util.ArrayList;
+import java.util.List;
 
-    @Test
+import static com.jayway.restassured.RestAssured.when;
+
+public class ValidateEmails extends TestBase {
 
 
+    @BeforeClass
+    public void setup() {
+
+        RestAssured.baseURI = "https://jsonplaceholder.typicode.com";
+    }
+
+    @Step public Integer userDataUserName(String user) throws Exception {
+        Integer userId = null;
+
+        Response<List<Users>> response = testApi.getUser().execute();
+        if (response.isSuccessful()) {
+
+            Integer numberOfUsers = response.body().size();
+
+            for (int i = 0; i < numberOfUsers; i++) {
+                String userName = response.body().get(i).getUsername();
+                if (userName.equals(user)) {
+                    userId = response.body().get(i).getId();
+
+                }
+            }
 
 
+        } else {
+            throw new Exception(response.errorBody().string());
+        }
+        return userId;
+    }
 
-//    @BeforeClass
-//    private void prepareTestData(){
-//
-//        RestAssured.baseURI ="https://jsonplaceholder.typicode.com";
-//        RequestSpecification request = RestAssured.given();
-//
-//
-//       // Response response = request.get("/users");
-//
-//        Response<Users> responseObject
-//
-//        int statusCode = response.getStatusCode();
-//        System.out.println("The status code recieved: " + statusCode);
-//
-//        System.out.println("Response body: " + response.body().asString());
-//
-//    }
+    @Step public List userDataPosts(Integer userId) throws Exception {
+        List postsIDs = new ArrayList();
 
-//    @Test
-//    private void validateEmailSpecialCharacters() {
-//
-//        user = get("/events?id=390")
-//                .then().statusCode(200)
-//                .
-//                .body("data.leagueId", equalTo(35));
-//
-//    }
+        Response<List<Posts>> response = testApi.getPosts(userId).execute();
+        if (response.isSuccessful()) {
+
+            Integer numberOfPosts = response.body().size();
+
+            for (int i = 0; i < numberOfPosts; i++) {
+                Integer postID = response.body().get(i).getId();
+                postsIDs.add(postID);
+            }
+        } else {
+            throw new Exception(response.errorBody().string());
+        }
+        return postsIDs;
+    }
+
+
+   @Test
+    public void testPost() throws Exception {
+
+        Integer userId = userDataUserName("Samantha");
+        List allUserPosts = userDataPosts(userId);
+
+        SoftAssertions softly = new SoftAssertions();
+
+        for (int i = 0; i<allUserPosts.size(); i++) {
+          List bodyComment = when().
+            get("/comments?postId={id}", allUserPosts.get(i)).
+            then().
+            statusCode(200).extract().body().path("email");
+
+            for (int x=0; x<bodyComment.size(); x++) {
+                Boolean testB = new ValidateValue().isValidEmailAddress(bodyComment.get(x).toString());
+                softly.assertThat(testB).as("Email: %s from postId %s", bodyComment.get(x), allUserPosts.get(i)).isTrue();
+            }
+        }
+        softly.assertAll();
+    }
 
 }

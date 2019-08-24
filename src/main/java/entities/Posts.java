@@ -1,9 +1,8 @@
-package qa.entities;
+package entities;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 
-@Builder
 @Getter
 @Setter
 @NoArgsConstructor

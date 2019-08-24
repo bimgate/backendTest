@@ -1,11 +1,11 @@
-package qa.helpers;
+package helpers;
 
-import qa.entities.Posts;
-import qa.entities.Users;
+import entities.Posts;
+import entities.Users;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
-import retrofit2.http.Path;
+import retrofit2.http.Query;
 
 import java.util.List;
 
@@ -16,9 +16,7 @@ public interface TestApi {
     Call<List<Users>> getUser();
 
     @Headers("Content-Type: application/json")
-    @GET("/posts?userId={userId}")
-    Call<List<Posts>> getPosts(@Path("userId") Integer userId);
-
-
+    @GET("/posts")
+    Call<List<Posts>> getPosts(@Query("userId") Integer id);
 
 }
